@@ -6,7 +6,8 @@
     <string name="passwd">Password</string>
     <string name="signin">Login</string>
     <string name="wronglogin">Login failed</string>
+    <string name="goodLogin">Valid login, welcome !</string>
     <string name="wrong">Email or Password not recognized</string>
-    <string name="good">Valid login, welcome !</string>
-    
+    <string name="title_activity_2">Activity2</string>
+
 </resources>
