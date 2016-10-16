@@ -73,12 +73,7 @@ public class MainActivity extends AppCompatActivity {
 		Toast toast = Toast.makeText(context, text, duration);
 		String[][] credentials = {{"admin@admin.com", "admin"},{"henrik@henrik.com", "passHenrik"},{"test@test.com", "test"}};
 		//Check that password is in this format: str@str.str
-		if(mail == null || passwd == null) {
-
-			toast.setText("Please enter an email address and a password");
-			toast.show();
-
-		} else if(!(mail.contains("@")&&mail.contains("."))) {
+		if(!(mail.contains("@")&&mail.contains("."))) {
 			toast.setText("Invalid email syntax");
 			toast.show();
 		} else {

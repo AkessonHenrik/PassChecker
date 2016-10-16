@@ -33,7 +33,10 @@ public class ImageActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+
         showPicture();
+
+        //If we have already shown the IMEI, we don't show it again
         if(!IMEIShown) {
             showIMEI();
             IMEIShown = true;
@@ -75,10 +78,15 @@ public class ImageActivity extends AppCompatActivity {
         File f = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
         System.out.println("Files:");
         ImageView imageView = (ImageView) findViewById(R.id.imageView1);
+
+        File imgFile = null;
+
+        //We browse through all files in directory
         for(File file : f.listFiles()) {
+
             System.out.println("File: " + file.getName());
 
-            File imgFile = new  File(file.getAbsolutePath());
+            imgFile = new File(file.getAbsolutePath());
 
             if(imgFile.exists()) {
                 Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
