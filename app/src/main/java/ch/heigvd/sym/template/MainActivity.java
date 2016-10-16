@@ -1,3 +1,6 @@
+/**
+ * @authors: Henrik AKESSON & Amel DUSSIER
+ */
 package ch.heigvd.sym.template;
 
 import android.content.Context;
@@ -6,7 +9,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -46,16 +48,21 @@ public class MainActivity extends AppCompatActivity {
 				String pass = password.getText().toString(); //TODO read password from EditText
 				if (isValid(mail, pass)) {
 					Toast.makeText(MainActivity.this, getResources().getString(R.string.goodLogin), Toast.LENGTH_LONG).show();
-					Intent intent = new Intent(MainActivity.this, Activity2.class);
+					Intent intent = new Intent(MainActivity.this, ImageActivity.class);
 					intent.putExtra("Email", mail);
 					intent.putExtra("Password", pass);
 					startActivity(intent);
 
-					finish();
+//					finish();
 				}
 			}
 
 		});
+	}
+
+	@Override
+	protected void onStart() {
+		super.onStart();
 	}
 
 	protected boolean isValid(String mail, String passwd) {
